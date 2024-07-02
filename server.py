@@ -1,14 +1,18 @@
 import os
+from dotenv import load_dotenv
 from flask import Flask, request, jsonify, send_from_directory
 from scripts.event_manager import EventManager
 from scripts.purchase_manager import PurchaseManager
 from scripts.participant_manager import ParticipantManager
 
-app = Flask(__name__, static_folder='web')
+# Carregar as variáveis de ambiente do arquivo .env
+load_dotenv()
+
+app = Flask(__name__, static_folder='web', static_url_path='')
 
 @app.route('/')
 def index():
-    return send_from_directory(app.static_folder, 'index.html')
+    return app.send_static_file('index.html')
 
 @app.route('/submit', methods=['POST'])
 def submit():
