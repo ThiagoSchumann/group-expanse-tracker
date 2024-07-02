@@ -1,0 +1,36 @@
+{
+    "purchase_properties": {
+        "Description": {
+            "title": {}
+        },
+        "Amount": {
+            "number": {
+                "format": "real"
+            }
+        }
+    },
+    "participant_properties": {
+        "Name": {
+            "title": {}
+        },
+        "Amount Due": {
+            "number": {
+                "format": "real"
+            }
+        },
+        "Status": {
+            "select": {
+                "options": [
+                    {
+                        "name": "Not Paid",
+                        "color": "red"
+                    },
+                    {
+                        "name": "Paid",
+                        "color": "green"
+                    }
+                ]
+            }
+        }
+    }
+}
